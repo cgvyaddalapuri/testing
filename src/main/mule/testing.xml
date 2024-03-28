@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="395fdb52-115b-489a-960d-d93407c61001" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="testingFlow" doc:id="ac867514-b5a9-4871-9296-3c382f3a491c" >
+		<http:listener doc:name="Listener" doc:id="b2725de7-daad-4680-b12f-e29f08537fbf" config-ref="HTTP_Listener_config" path="/testing"/>
+		<logger level="INFO" doc:name="Logger" doc:id="3c91356a-ea3d-4eea-a199-87f99be9d58a" message="Jenkins successful"/>
+	</flow>
+</mule>
